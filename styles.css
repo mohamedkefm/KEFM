@@ -1,0 +1,474 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 10;
+  
+    font-weight: 600;
+  }
+
+
+p {
+  margin: 0 0 20px;
+}
+
+/* Navigation */
+
+
+nav {
+  position: sticky; /* Makes navbar stick to the top */
+  top: 0;
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s; /* Add a hover transition */
+}
+
+nav a:hover {
+  color: #007bff; /* Change link color on hover */
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('img/Capitals.webp') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.hero button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Zigzag Info Section */
+.zigzag-info {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensure responsiveness on smaller screens */
+  margin-bottom: 40px;
+  gap: 20px; /* Adjust spacing between elements */
+  padding: 30px;
+  background-color: #ffffff; /* White background for better contrast */
+  border-radius: 15px; /* More pronounced rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for better depth */
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.info-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.info-image img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* Increased max size for better visibility */
+  border-radius: 15px; /* Match the container's rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for images */
+}
+
+.info-text {
+  flex: 1; /* Ensures text takes up available space */
+  max-width: 600px; /* Limits text width for better readability */
+}
+
+.info-text h3 {
+  font-size: 2rem; /* Larger heading size for emphasis */
+  margin-bottom: 15px;
+  color: #333; /* Darker text for better contrast */
+  font-weight: bold; /* Bold for better emphasis */
+}
+
+.info-text p {
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.8; /* Improved readability with more line spacing */
+  color: #666; /* Softer gray for better contrast */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    text-align: center; /* Center-align text */
+    gap: 15px;
+  }
+
+  .info-image img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+  }
+
+  .info-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .info-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Additional Services Section */
+#additional-services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#additional-services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+#additional-services .service-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#additional-services .card {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#additional-services .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#additional-services .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+#additional-services .card h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #000;
+  text-align: center;
+}
+
+#additional-services .card p {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: justify;
+}
+/* Main Service Styles */
+/* Main Service Section */
+.main-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-service img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.main-service-content {
+  width: 100%;
+}
+
+.main-service-content h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.main-service-content ul, .main-service-content ol {
+  margin-left: 20px;
+}
+/* Services Section */
+.services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  min-height: 400px; /* Ensures equal card height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img, .card video {
+  width: 100%;
+  height: 300px; /* Uniform image/video height */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #000;
+  text-align: center;
+}
+
+
+.card p {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: justify;
+}
+ /* About Us Section */
+.about {
+  padding: 50px 80px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+.about-text {
+  text-align: center;
+  padding: 20px;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+/* Partners Section Styling */
+.Partners {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.Partners h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Partners Section Styling */
+.Partners {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.Partners h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Company Card Container */
+.company-card-container {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Space between cards */
+  align-items: center; /* Center align cards */
+}
+
+/* Individual Company Card */
+.company-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 800px; /* Consistent max width */
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.company-logo {
+  width: 120px; /* Consistent width */
+  height: 120px; /* Consistent height */
+  object-fit: contain; /* Maintain aspect ratio */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Company Info Styling */
+.company-info {
+  flex: 1; /* Allow the text to grow */
+}
+
+.company-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #444;
+}
+
+.company-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.company-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.company-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-image img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
